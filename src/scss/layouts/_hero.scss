@@ -1,0 +1,43 @@
+.hero{
+    @include opacity($black, .75);
+    @extend .bg;
+    height: 100vh;
+    color: $text-white !important;
+
+    
+    &__content{
+        
+        &-brand{
+            color: $brand-color;
+        }
+        p{
+            color: $text-white;
+        }
+        
+    }
+
+    &__scroll{
+        width: 100%;
+        text-align: center;
+        color: $text-white;
+        z-index: 8;
+        bottom: 50px;
+        @include center-X;
+        
+    }
+    &__down{
+        position: relative;
+        animation: bounce 2s infinite;
+        @include size(28px,44px);
+        border-radius: 30px;
+        border: 2px solid $text-white;
+        display: inline-block;
+        
+        &::before{
+            content: "";
+            @include size(3px,15px);
+            background-color: #fff;
+            @include centerer;
+        }
+    }
+}

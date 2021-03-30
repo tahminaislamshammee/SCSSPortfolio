@@ -1,0 +1,33 @@
+.contacts{
+    @include title;
+
+    &__icon{
+        font-size: $icon-size;
+        color: $brand-color;
+    }
+    &__title{
+        font-size: $heading-sm;
+    }
+    &__form{
+        margin-top: 20px;
+    }
+    &__form-control{
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: map-get($forms,'form-font-size');
+        text-transform: capitalize;
+        color: map-get($forms,'placeholder-color');
+        background-color: $bg-white;
+        // border: 2px solid #ced4da;
+        // border-radius: .25rem;
+        @include border-rd(5px, map-get($forms,'form-element-border-color'), 1px);
+        transition: all .7s;
+        margin-bottom: 20px;
+
+        &:focus{
+            outline: none;
+            border-color: $brand-color !important;
+        }
+    }
+}

@@ -1,0 +1,109 @@
+// MARGIN
+@mixin margin($position, $unit) {
+    margin-#{$position}: $unit + px;
+}
+//PADDING / Margin
+@mixin space($position, $unit, $choice){
+    #{$choice}-#{$position}: $unit +px;
+}
+@mixin verticle-space($choice,$value){
+    #{$choice}-top: $value;
+    #{$choice}-bottom: $value;
+}
+//horizental
+@mixin Horizontal-space($choice,$value){
+    #{$choice}-left: $value;
+    #{$choice}-right: $value;
+}
+//size
+@mixin size($width, $height:$width){
+    height:$height;
+    width: $width;
+    line-height: $height;
+}
+//BORDER
+@mixin border-rd($radius, $clr, $size){
+    border-radius: $radius;
+    border: $size solid $clr;
+}
+//title
+@mixin title {
+    h1{
+        font-weight: $font-normal !important;
+        color: $text-black !important;  
+    }
+    p{
+        color: $content-color;
+        @include verticle-space(padding,5px);
+    }
+    .title-bold{
+        font-weight: $font-semibold !important;
+    }
+}
+
+//POSITION
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+//CENTER 
+@mixin centerer{
+    @include position(absolute,$left:50%,$top:50%);
+    transform: translate(-50%, -50%);
+}
+
+// //horizontal center
+@mixin center-X{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+// //vertical center
+@mixin center-y{
+    @include position(absolute,$top:50%);
+    transform: translateY(-50%);
+}
+
+//OPACITY
+@mixin opacity($color,$density){
+    &::before{   
+        content: "";
+        background-color: $color;
+        opacity: $density;
+        @include coverer;
+    }
+}
+//cover
+@mixin coverer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+//hover
+@mixin social-links-hover(){
+    &:hover{
+        border-color: $brand-color;
+        transform: scale(1.2);
+        color: $brand-color;
+    }
+}
+
+//social-links
+@mixin links-style{
+    @include Horizontal-space(margin,10px);
+    @include border-rd(50%, $border-color, 2px);
+    @include size(40px);
+    text-align: center;
+    transition: all .3s;
+    cursor: pointer;
+    @include social-links-hover;
+}
+
+

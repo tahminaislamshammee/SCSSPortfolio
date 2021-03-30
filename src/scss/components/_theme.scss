@@ -1,0 +1,128 @@
+
+$rainbow: #9b59b6 #37b8df #31b164 #5d69f6 #f7b731 $brand-color;
+
+.themes{
+    @include position(fixed, $left:0,$top:103px);
+    text-align: left;
+    color: $text-white;
+    display: flex;
+    z-index: 10;
+
+    &__colors{
+    background: $bg-white;;
+    display: flex;
+    align-items: center;
+    width: 183px;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-left: -179px;
+    transition: all .7s;
+    border:2px solid #333;
+    &.active{
+        margin-left: 0px;
+    }
+    }
+    &__items{
+        
+        @for $i from 1 through 6 {
+            & li:nth-child(#{$i}) {
+                background-color: nth($rainbow, $i);
+            }
+        }
+        li{ 
+        @include size(30px);
+        display: inline-block;
+        border-radius: 16px 16px 0;
+        margin:0px 10px;
+        cursor: pointer;
+ 
+        }
+    }
+    &__btn{
+        color: $text-white;
+        background:darken($bg-dark, 50%);
+        @include size(55px);
+        text-align: center;
+        cursor: pointer;
+        transition: all .7s;
+
+        &:hover{
+            background-color: darken($bg-dark, 10);
+        }
+    }
+}
+
+@for $i from 1 through 6 {
+
+.color-#{$i}{
+                
+    &.themes__colors{
+        background-color: nth($rainbow, $i);
+        
+    }
+    & .scroll-top{
+        background-color: nth($rainbow, $i);
+         
+    }
+    a{
+        &:hover{
+            color: nth($rainbow, $i) !important;
+        }
+    }
+    .heading{
+        &--brand{
+            color: nth($rainbow, $i) !important;
+        }
+        
+    }
+    .about__right__item{
+        &:hover{
+            color: nth($rainbow, $i) !important;
+            border-color: nth($rainbow, $i) !important;
+        }
+        
+    }
+    .service{
+        &__icon{
+            color: nth($rainbow, $i) !important;
+        }
+    }
+    .divider{
+        background-color: nth($rainbow, $i) !important; 
+    }
+    .btn--primary{
+        background-color: nth($rainbow, $i) !important; 
+    }
+    .cta{
+        a{
+            &:hover{
+                color: white !important;
+            }
+        }
+    }
+    .slider{
+        &__icon{
+           color: nth($rainbow, $i) !important;
+        }
+    }
+    .sliders{
+        &__active .owl-dot.active{
+            background-color: nth($rainbow, $i) !important;  
+        }
+    }
+    .contacts{
+        &__icon{
+            color: nth($rainbow, $i) !important;  
+        }
+    }
+    .footer{
+        &__link{
+            &:hover{
+                color: nth($rainbow, $i) !important;
+                border-color: nth($rainbow, $i) !important;;
+            }
+        }
+    }
+}
+
+}

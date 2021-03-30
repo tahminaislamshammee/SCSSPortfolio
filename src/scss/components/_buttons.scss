@@ -1,0 +1,41 @@
+.btn{
+        @include margin(top, 20);
+        display: inline-block;
+        padding: 10px 15px;
+        text-transform: uppercase;
+        font-weight: $font-bold;
+        font-size: $btn-size;
+        letter-spacing: 2px;
+        transition: all .3s;
+        outline: none !important;
+
+        &:hover{
+            transform: translateY(-5px);
+        }
+        &--rounded{
+            border-radius: 20px; 
+        }
+        &--rounded-sm{
+            border-radius: 5px;
+        }
+        &--primary{
+            color: $text-white;
+            background-color: $brand-color;
+            &:hover{
+                background-color:darken($brand-color, 5%);
+                color: $text-white !important;
+            }
+        }
+        &--sec{
+            @include border-rd(30px,white,1px);
+            background-color: transparent;
+            color: $text-white; 
+           
+            &:hover{
+                background-color:$white ;
+                color: $brand-color;  
+            }
+
+            
+        }
+}

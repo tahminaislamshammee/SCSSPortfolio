@@ -1,0 +1,68 @@
+
+
+//FONTS
+@import './fonts/kit';
+
+//bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+//fontawesome
+@import './fontawesome/fontawesome.scss';
+@import './fontawesome/regular.scss';
+@import './fontawesome/solid.scss';
+@import './fontawesome/brands.scss';
+
+//abstracts
+@import './abstract/mixins/responsive';
+@import './abstract/functions';
+@import './abstract/mixins/mixins';
+@import './abstract/variables';
+@import './abstract/utilities.scss';
+
+//base
+@import './base/base';
+@import './base/typhography';
+
+//components
+@import './components/buttons';
+@import './components/slider';
+@import './components/theme';
+@import './components/scroll-top';
+
+//layouts
+@import './layouts/header';
+@import './layouts/nav';
+@import './layouts/hero';
+@import './layouts/about';
+@import './layouts/services';
+@import './layouts/works';
+@import './layouts/contacts';
+@import './layouts/footer';
+
+
+
+
+
+$side: right;
+$value: 100;
+$type: padding;
+
+.gap-#{$side}-#{$value}{
+    margin-#{$side}: $value + px;
+}
+
+@mixin gap($side, $value) {
+
+    margin-#{$side}: $value + px;
+}
+
+@mixin gap1($side, $value, $type) {
+
+    #{$type}-#{$side}: $value + px;
+}
+.class1{
+    @include gap1(left, 300, margin);
+}
+.class0{
+    @include gap(right, 300);
+}

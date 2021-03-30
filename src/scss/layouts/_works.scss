@@ -1,0 +1,45 @@
+
+.works{
+    @include title;
+    $var:&;
+    &__item{
+        border-radius: 5px;
+        font-family: $Lobster;
+        position: relative;
+        overflow: hidden;
+        &:hover #{$var}__hover-contents{
+            transform: scale(1);
+        }
+        &:hover #{$var}__img{
+            transform: rotate(10deg)scale(1.5);
+        }
+        @include breakpoint(sm){
+            margin-bottom: 20px;
+        }
+    }
+    &__img-holder{
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+    &__img{
+        width: 100%;
+        transition: .7s;
+    }
+    &__hover-contents{
+        @include coverer;
+        @include opacity(#333,.75);
+        transform: scale(0);
+        transition: .7s;
+        z-index: 4;
+    }
+    
+    &__contents{
+        @include centerer;
+        color: $text-white;
+        text-align: center;
+    }
+    &__category{
+        color: $text-white !important;
+    }
+}

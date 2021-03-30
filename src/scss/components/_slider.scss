@@ -1,0 +1,51 @@
+@import '../carousel/owl.carousel.scss';
+.sliders{
+    @include title;
+
+    &__active{
+        .owl-dots{
+            text-align: center !important;
+        }
+        .owl-dot {
+            display: inline-block ;
+            @include size(15px);
+            background-color: darken($color: $bg-light, $amount: 10%) !important;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: .7s;
+            outline: none !important;
+        }
+        .owl-dot.active{
+            background-color: $brand-color !important;
+        }
+    }
+
+}
+.slider{
+    &__icon{
+        font-size: 40px;
+        color: $brand-color;
+    }
+    &__img{
+        width: auto !important;
+        height: auto;
+        display: inline-block !important;
+        @include border-rd(50%,$bg-light,1px);
+        padding: 5px;
+    }
+    &__content{
+        color: $content-color;
+        font-style: italic;
+        font-family: $Lato;
+    }
+    &__name{
+        font-size: 18px;
+        font-family: $Lato;
+        color: $content-color;
+        span{
+            font-weight: $font-bold !important;
+        }
+    }
+
+}
+

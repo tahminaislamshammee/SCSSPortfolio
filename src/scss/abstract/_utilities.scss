@@ -1,0 +1,16 @@
+
+.mb-40{
+    margin-bottom: 40px;
+}
+// DIVIDER
+.divider{
+    width: 60px;
+    height: 2px;
+    background-color: $brand-color;
+    transition: all .3s;
+    margin: 18px auto 0 auto;
+ 
+    &--centered{
+        margin: 0 auto;
+    }
+ }

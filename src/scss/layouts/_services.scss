@@ -1,0 +1,36 @@
+.services{
+    text-align: center;
+    @include title;
+}
+.service{
+    box-shadow: .8px .9px 3px grey;
+    transition:  box-shadow .6s ease-out;
+    @include border-rd(5px, #e8e8e8, 1px);
+    padding: 15px;
+    @include breakpoint(md){
+        margin-bottom: 20px;
+    }
+    @include breakpoint(sm){
+        margin-bottom: 20px;
+    }
+    &:hover{
+        box-shadow: 1px 8px 20px grey;
+        .divider{
+            width: 100px;
+        }
+    }
+    &__icon{
+        color: $brand-color;
+        font-size: $icon-size;
+        font-weight: $font-med;
+    }
+    &__title{
+        text-transform: capitalize;
+        transition: all .7s;
+        
+        .divider{
+            margin-bottom: 20px;
+        }
+    }
+
+}

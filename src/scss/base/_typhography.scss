@@ -1,0 +1,64 @@
+//LOGO TEXT
+.logo-text{
+    font-family: $Lobster;
+    color: $text-white;
+    font-size: $heading-md;
+}
+.nav-text{
+    font-family: $Lato;
+    font-weight: $font-bold;
+    color: $text-white;
+}
+
+//HEADING
+.heading{
+    font-family: $Lobster;
+    text-transform: capitalize;
+
+    &--lg{
+        font-size: $heading-lg;
+    }
+
+    &--md{
+        font-size: $heading-md;
+    }
+
+    &--black{
+        color: $text-black;
+    }
+
+    &--brand{
+        color: $brand-color;
+    }
+
+    &--white{
+        color: $text-white;
+    }
+
+    &--light{
+        font-weight: $font-normal;
+    }
+
+    &--med{
+        font-weight: $font-med;
+    }
+
+    &--bold{
+        font-weight: $font-bold;
+    }
+}
+.subheading{
+    font-weight: $font-med;
+    font-family: $Lato;
+    text-transform: capitalize;
+}
+p{
+    font-size: map-get($text-size, 'med-font-size');
+    color: $content-color;
+
+    @include breakpoint(sm){
+        font-size: map-get($text-size, 'small-font-size'); 
+    }
+}
+
+

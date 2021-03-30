@@ -1,0 +1,65 @@
+.nav{
+        @include breakpoint(sm){
+            text-align: right !important; 
+            background: $bg-dark;
+            width: 50%;
+            margin: auto !important;
+            @include position(absolute, $top:23px,$right:13px);
+        }
+        &-mobile{
+            display: none;
+            transition: all .7s;
+            text-align: right;
+            padding: 10px;
+            color: $text-white !important;
+            @include position(fixed,$right:25px);
+            
+            @include breakpoint(sm){
+                display: inline-block;
+                @include position(fixed, $top:0);
+            }
+            
+            .scroll-header &{
+                @include breakpoint(sm){
+                    top: 11px;
+                 }
+            }
+        }
+
+        &-items{
+            &.show{
+                display: block !important;
+                text-align: center;
+                margin-left: auto;
+                width: 100%;
+            }
+            @include breakpoint(sm){
+                display: none !important;
+            }
+        }
+        &-links{
+            margin-left: 5rem;
+            @include breakpoint(md){
+                margin-left: 1rem;
+            }
+            @include breakpoint(sm){    
+                margin-left: 0px;
+                border-bottom: 1px solid #5f5959;
+                padding: 10px 0px;
+                &:last-child(){
+                    border-bottom: none;
+                }
+            }
+            .active a{
+                color: $brand-color;
+            }
+        }
+        &-link{
+            @extend .nav-text;
+            transition: .3s;
+        }
+        
+}
+
+
+

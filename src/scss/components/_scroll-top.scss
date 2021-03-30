@@ -1,0 +1,17 @@
+.scroll-top{
+    display: inline-block;
+    z-index: 10;
+    color: $text-white;
+    background: $brand-color;
+    @include size(34px);
+    text-align: center;
+    border-radius: 4px;
+    @include position (fixed, $right: 19px, $bottom: 10px);
+    scroll-behavior: smooth;
+    transition: all .7s;
+    a{
+        &:hover{
+            color: $text-white;
+        }
+    }
+}

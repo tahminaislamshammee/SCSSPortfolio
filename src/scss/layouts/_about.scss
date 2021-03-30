@@ -1,0 +1,33 @@
+
+.about{
+    &__left{
+        padding: 5px;
+        @include border-rd(5px,$border-color,2px);
+    &__img{
+            width: 100%;
+        }
+    }
+    &__right{
+        @include breakpoint(sm){
+            padding-top: 20px;
+        }
+        &__heading{
+            text-transform: capitalize;
+        }
+        &__subheading{
+            // @include verticle-space(margin,10px);
+            margin: 10px 0;
+            text-transform: capitalize;
+        }
+        &__text{
+            text-align: justify;
+            @include verticle-space(padding,15px);
+        }
+        &__items{
+            display: flex;
+        }
+        &__item{
+            @include links-style;
+        }
+    }
+}
